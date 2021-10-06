@@ -48,7 +48,12 @@ namespace DeptBook
             _dept = dept;
         }
 
-       
+
+        public void UpdateDept(double valueToAdd)
+        {
+            _dept += valueToAdd;
+        }
+
 
     }
 }

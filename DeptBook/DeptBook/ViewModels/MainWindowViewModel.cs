@@ -34,6 +34,25 @@ namespace DeptBook.ViewModels
             //Else: Hvis der trykkes cancel
         }
 
+        private DelegateCommand _openInfo;
+        public DelegateCommand OpenInfo =>
+            _openInfo ?? (_openInfo = new DelegateCommand(ExecuteOpenInfo));
+
+        void ExecuteOpenInfo()
+        {
+            var vmInfo = new DepterInfoViewModel(CurrentDepter);
+            var dialog = new DeptersInfoWindow(vmInfo);
+
+            //Hvis der trykkes save tilføjer vi ny depter til listen
+            if (dialog.ShowDialog() == true)
+            {
+                //Updatere currentDept
+                CurrentDepter.UpdateDept(CurrentDepter.Dept); 
+            }
+            //Else: Hvis der trykkes close
+         }
+
+
         public MainWindowViewModel()
         {
             //Tilføjer depters
@@ -57,5 +76,6 @@ namespace DeptBook.ViewModels
             get { return _currentDepter; }
             set { SetProperty(ref _currentDepter, value); }
         }
+
     }
 }

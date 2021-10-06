@@ -31,7 +31,9 @@
             IsReadOnly="True"
             MinRowHeight="12"
             Margin="10,10,10,10"
+            MouseDoubleClick="MouseDoubleClick" 
         />
+        
         <Button Grid.Column="1" Grid.Row="1" VerticalAlignment="Top" Content="Add" Width="75" Margin="0,10,0,0" Command="{Binding AddDepter}"/>
     </Grid>
 </Window>

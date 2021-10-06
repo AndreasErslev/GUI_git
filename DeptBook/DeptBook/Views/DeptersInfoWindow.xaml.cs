@@ -10,21 +10,24 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
-using DeptBook.ViewModels;
 
 namespace DeptBook.Views
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for DeptersInfoWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class DeptersInfoWindow : Window
     {
-        public MainWindow()
+        public DeptersInfoWindow(ViewModels.DepterInfoViewModel vmInfo)
         {
             InitializeComponent();
+            DataContext = vmInfo;
         }
 
+        private void BtnAddValue(object sender, RoutedEventArgs e)
+        {
+            DialogResult = true;
+        }
     }
 }
