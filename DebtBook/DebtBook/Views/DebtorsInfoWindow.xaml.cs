@@ -12,20 +12,20 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace DeptBook.Views
+namespace DebtBook.Views
 {
     /// <summary>
-    /// Interaction logic for AddDepterDialog.xaml
+    /// Interaction logic for DebtorsInfoWindow.xaml
     /// </summary>
-    public partial class AddDepterDialog : Window
+    public partial class DebtorsInfoWindow : Window
     {
-        public AddDepterDialog(ViewModels.AddDepterViewModel vmDepter)
+        public DebtorsInfoWindow(ViewModels.DebtorInfoViewModel vmInfo)
         {
             InitializeComponent();
-            DataContext = vmDepter;
+            DataContext = vmInfo;
         }
 
-        private void BtnSave(object sender, RoutedEventArgs e)
+        private void BtnAddValue(object sender, RoutedEventArgs e)
         {
             DialogResult = true;
         }

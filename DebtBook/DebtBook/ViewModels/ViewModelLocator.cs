@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DeptBook.ViewModels
+namespace DebtBook.ViewModels
 {
     public class ViewModelLocator
     {

@@ -1,16 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DeptBook
+namespace DebtBook
 {
-    public class Depter
+    public class Debtor
     {
         //Fields
         private string _name;
-        private double _dept;
+        private double _debt;
+        public ObservableCollection<double> ListOfDebts = new ObservableCollection<double>();
 
         //Properties
         public string Name
@@ -25,35 +27,27 @@ namespace DeptBook
             }
         }
 
-        public double Dept
+        public double Debt
         {
             get
             {
-                return _dept;
+                return _debt;
             }
             set
             {
-                _dept = value;
+                _debt = value;
             }
         }
-
-        public Depter()
-        {
-
-        }
-
-        public Depter(string name, double dept)
+        public Debtor() { }
+        public Debtor(string name, double debt)
         {
             _name = name;
-            _dept = dept;
+            AddDebt(debt);
         }
-
-
-        public void UpdateDept(double valueToAdd)
+        public void AddDebt(double valueToAdd)
         {
-            _dept += valueToAdd;
+            _debt += valueToAdd;
+            ListOfDebts.Add(valueToAdd);
         }
-
-
     }
 }

@@ -1,12 +1,12 @@
-﻿<Window x:Class="DeptBook.Views.MainWindow"
+﻿<Window x:Class="DebtBook.Views.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:DeptBook.Views"
+        xmlns:local="clr-namespace:DebtBook.Views"
         mc:Ignorable="d"
         DataContext="{Binding Source={StaticResource ViewModelLocator}, Path=ViewModel}"
-        Title="Dept Book" Height="450" Width="550">
+        Title="Debt Book" Height="450" Width="550">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="2*"/>
@@ -20,9 +20,9 @@
             <RowDefinition Height="1.5*"/>
         </Grid.RowDefinitions>
 
-        <Label Content="Depters" Grid.Row="0" FontSize="20" VerticalAlignment="Bottom" Margin="10,0,0,0"/>
-        <DataGrid x:Name="DisplayDepters" ItemsSource="{Binding Path=Depters}"
-            IsSynchronizedWithCurrentItem="True" SelectedItem="{Binding Path=CurrentDepter}"      
+        <Label Content="Debtors" Grid.Row="0" FontSize="20" VerticalAlignment="Bottom" Margin="10,0,0,0"/>
+        <DataGrid x:Name="DisplayDebtors" ItemsSource="{Binding Path=Debtors}"
+            IsSynchronizedWithCurrentItem="True" SelectedItem="{Binding Path=CurrentDebtor}"      
             Grid.Column="0"
             Grid.Row="1"
             Grid.RowSpan="3"
@@ -30,10 +30,14 @@
             CanUserDeleteRows="False"
             IsReadOnly="True"
             MinRowHeight="12"
-            Margin="10,10,10,10"
-            MouseDoubleClick="MouseDoubleClick" 
-        />
+            Margin="10,10,10,10">
+            <DataGrid.InputBindings>
+                <MouseBinding
+                    MouseAction="LeftDoubleClick"
+                    Command="{Binding OpenInfo}"/>
+            </DataGrid.InputBindings>
+        </DataGrid>
         
-        <Button Grid.Column="1" Grid.Row="1" VerticalAlignment="Top" Content="Add" Width="75" Margin="0,10,0,0" Command="{Binding AddDepter}"/>
+        <Button Grid.Column="1" Grid.Row="1" VerticalAlignment="Top" Content="Add" Width="75" Margin="0,10,0,0" Command="{Binding AddDebtor}"/>
     </Grid>
 </Window>
