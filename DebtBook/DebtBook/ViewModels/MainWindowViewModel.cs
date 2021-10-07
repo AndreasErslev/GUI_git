@@ -44,7 +44,7 @@ namespace DebtBook.ViewModels
             var dialog = new DebtorsInfoWindow(vmInfo);
 
             // Inde i DebtorsInfoViewModel.cs:
-            // debt er tilføjet via DebtorInfoViewModel til CurrentDebtor.AddDebt,
+            // debt er tilføjet via CurrentDebtor.AddDebt,
             // som opdaterer debt sum og add af debt til ListOfDebt
             dialog.ShowDialog();
 

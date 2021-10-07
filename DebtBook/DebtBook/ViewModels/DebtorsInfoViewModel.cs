@@ -28,7 +28,7 @@ namespace DebtBook.ViewModels
         }
 
 
-        // forbindelse til label 'Value' i DebtorsInfoWindow.xaml
+        // forbindelse til textbox under label 'Value' i DebtorsInfoWindow.xaml
         private double _newDebt = 0;
         public double NewDebt
         {
