@@ -48,7 +48,7 @@ namespace DebtBook.ViewModels
             // som opdaterer debt sum og add af debt til ListOfDebt
             dialog.ShowDialog();
 
-            // Opdater datagrid, når der trykkes close
+            // Opdater datagrid, når der trykkes close/lukker dialog
             Debtors = new ObservableCollection<Debtor>(Debtors.ToList());
         }
 

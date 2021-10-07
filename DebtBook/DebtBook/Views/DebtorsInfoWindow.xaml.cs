@@ -24,10 +24,5 @@ namespace DebtBook.Views
             InitializeComponent();
             DataContext = vmInfo;
         }
-
-        private void BtnAddValue(object sender, RoutedEventArgs e)
-        {
-            DialogResult = true;
-        }
     }
 }
