@@ -5,5 +5,8 @@
              StartupUri="Views/MainWindow.xaml">
     <Application.Resources>
         <local:ViewModelLocator x:Key="ViewModelLocator"/>
+        <SolidColorBrush x:Key="Brush" Color="LightBlue"/>
+        <SolidColorBrush x:Key="BrushDepter" Color="LightGoldenrodYellow"/>
+        <SolidColorBrush x:Key="BrushAdd" Color="LightGreen"/>
     </Application.Resources>
 </Application>

@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:DebtBook.Views"
         mc:Ignorable="d"
         DataContext="{Binding Source={StaticResource ViewModelLocator}, Path=ViewModel}"
+        Background="{DynamicResource ResourceKey=Brush}"
         Title="Debt Book" Height="450" Width="550">
     <Grid>
         <Grid.ColumnDefinitions>
