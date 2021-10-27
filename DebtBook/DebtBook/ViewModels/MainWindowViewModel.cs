@@ -50,6 +50,7 @@ namespace DebtBook.ViewModels
             // Inde i DebtorsInfoViewModel.cs:
             // debt er tilføjet via CurrentDebtor.AddDebt,
             // som opdaterer debt sum og add af debt til ListOfDebt
+            
             dialog.ShowDialog();
 
             // Opdater datagrid, når der trykkes close/lukker dialog
@@ -81,12 +82,12 @@ namespace DebtBook.ViewModels
         }
 
 
-        private ICommand openFile;
-        public ICommand OpenFile
+        private ICommand loadFile;
+        public ICommand LoadFile
         {
             get
             {
-                return openFile ?? (openFile = new DelegateCommand(() =>
+                return loadFile ?? (loadFile = new DelegateCommand(() =>
                     {
                         OpenFileDialog openFileDialog = new OpenFileDialog();
 
