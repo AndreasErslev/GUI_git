@@ -63,20 +63,20 @@ namespace DebtBook.ViewModels
             get
             {
                 return saveFile ?? (saveFile = new DelegateCommand(() =>
-                {
-                    SaveFileDialog saveFileDialog = new SaveFileDialog();
-
-                    if (saveFileDialog.ShowDialog() == true)
                     {
-                        var json = JsonConvert.SerializeObject(Debtors, Newtonsoft.Json.Formatting.Indented);
+                        SaveFileDialog saveFileDialog = new SaveFileDialog();
 
-                        using (StreamWriter sw = new StreamWriter(saveFileDialog.FileName))
+                        if (saveFileDialog.ShowDialog() == true)
                         {
-                            sw.WriteLine(json);
-                        }
-                    }
+                            var json = JsonConvert.SerializeObject(Debtors, Newtonsoft.Json.Formatting.Indented);
 
-                }
+                            using (StreamWriter sw = new StreamWriter(saveFileDialog.FileName))
+                            {
+                                sw.WriteLine(json);
+                            }
+                        }
+
+                    }
                 ));
             }
         }
