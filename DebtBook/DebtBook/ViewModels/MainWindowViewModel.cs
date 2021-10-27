@@ -81,6 +81,36 @@ namespace DebtBook.ViewModels
         }
 
 
+        private ICommand openFile;
+        public ICommand OpenFile
+        {
+            get
+            {
+                return openFile ?? (openFile = new DelegateCommand(() =>
+                    {
+                        OpenFileDialog openFileDialog = new OpenFileDialog();
+
+                        if (openFileDialog.ShowDialog() == true)
+                        {
+                            using (StreamReader sr = new StreamReader(openFileDialog.FileName))
+                            {
+                                var jsonText = sr.ReadToEnd();
+                                var deptorList = JsonConvert.DeserializeObject<List<Debtor>>(jsonText);
+
+                                Debtors.Clear();
+                                foreach (var deptor in deptorList)
+                                {
+                                    Debtors.Add(deptor);
+                                }
+                            }
+                        }
+
+                    }
+                ));
+            }
+        }
+
+
         public MainWindowViewModel()
         {
             //Tilføjer debtors
