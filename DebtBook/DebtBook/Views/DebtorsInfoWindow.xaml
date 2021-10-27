@@ -18,7 +18,8 @@
         </Grid.RowDefinitions>
 
         <Label Content="Added debt " Grid.Row="0" FontSize="16px" VerticalAlignment="Top" Margin="20,0,0,0"/>
-        <DataGrid x:Name="DisplayDebtors" ItemsSource="{Binding Path=AllDebts}"   
+        <DataGrid x:Name="DisplayDebtors" ItemsSource="{Binding Path=AllDebts}" 
+            Grid.RowSpan="3"
             CanUserAddRows="False"
             CanUserDeleteRows="False"
             IsReadOnly="True"

@@ -42,7 +42,7 @@
         <StackPanel Grid.Row="1" Grid.Column="1" Grid.RowSpan="2">
             <Button Content="Add"  Width="85" Height="23"  Command="{Binding AddDebtor}" Margin="0,10,0,10"/>
 
-            <Button Content="Deptor info"  Width="85" Height="23"  Command="{Binding OpenInfo}" Margin="0,0,0,10"/>
+            <Button Content="Debtor Info"  Width="85" Height="23"  Command="{Binding OpenInfo}" Margin="0,0,0,10"/>
 
             <Button Content="Save File" Width="85"  Height="23" Command="{Binding SaveFile}" Margin="0,0,0,10"/>
 
