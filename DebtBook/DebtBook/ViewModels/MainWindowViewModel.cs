@@ -1,11 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using System.Xml;
 using DebtBook.Views;
+using Microsoft.Win32;
+using Newtonsoft.Json;
 using Prism.Commands;
 using Prism.Mvvm;
 
@@ -50,6 +54,30 @@ namespace DebtBook.ViewModels
 
             // Opdater datagrid, når der trykkes close/lukker dialog
             Debtors = new ObservableCollection<Debtor>(Debtors.ToList());
+        }
+
+        private ICommand saveFile;
+        public ICommand SaveFile
+        {
+            get
+            {
+                return saveFile ?? (saveFile = new DelegateCommand(() =>
+                {
+                    SaveFileDialog saveFileDialog = new SaveFileDialog();
+
+                    if (saveFileDialog.ShowDialog() == true)
+                    {
+                        var json = JsonConvert.SerializeObject(Debtors, Newtonsoft.Json.Formatting.Indented);
+
+                        using (StreamWriter sw = new StreamWriter(saveFileDialog.FileName))
+                        {
+                            sw.WriteLine(json);
+                        }
+                    }
+
+                }
+                ));
+            }
         }
 
 
