@@ -75,6 +75,20 @@ namespace Morgenmadsbuffeten_GruppeTo.Controllers
             return View(breakfastBuffetDB);
         }
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> CreateCheckIn([Bind("GuestId")] BreakfastBuffetDB breakfastBuffetDB)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.Add(breakfastBuffetDB.GuestBreakfastCheckedIn);
+
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
+            }
+            return View(breakfastBuffetDB);
+        }
+
         // GET: BreakfastBuffetDBs/Edit/5
         //public async Task<IActionResult> Edit(int? id)
         //{
