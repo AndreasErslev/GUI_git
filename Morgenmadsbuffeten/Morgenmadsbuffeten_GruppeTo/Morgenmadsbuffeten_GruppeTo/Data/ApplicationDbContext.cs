@@ -14,8 +14,8 @@ namespace Morgenmadsbuffeten_GruppeTo.Data
         {
         }
 
-        DbSet<BreakfastBuffetDB> breakfastBuffets { get; set; }
-        DbSet<Guest> guests { get; set; }
+        public DbSet<BreakfastBuffetDB> breakfastBuffets { get; set; }
+        public DbSet<Guest> guests { get; set; }
 
     }
 }
