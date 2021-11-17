@@ -63,7 +63,7 @@ namespace Morgenmadsbuffeten_GruppeTo
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Reception}/{id?}");
+                    pattern: "{controller=BreakfastBuffetDBs}/{action=Reception}/{id?}");
                 endpoints.MapRazorPages();
             });
         }
