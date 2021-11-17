@@ -52,27 +52,31 @@ namespace Morgenmadsbuffeten_GruppeTo.Controllers
         //    return View(breakfastBuffetDB);
         //}
 
+        public async Task<IActionResult> ReceptionList()
+        {
+            return View(await _context.guests.ToListAsync());
+        }
+
         // GET: BreakfastBuffetDBs/Create
-        //public IActionResult Create()
-        //{
-        //    return View();
-        //}
+        public IActionResult Create()
+        {
+            return Reception();
+        }
 
         // POST: BreakfastBuffetDBs/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ReceptiontId")] BreakfastBuffetDB breakfastBuffetDB)
+        public async Task<IActionResult> Create( Guest guest)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(breakfastBuffetDB);
-
+                _context.guests.Add(guest);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction(nameof(ReceptionList));
             }
-            return View(breakfastBuffetDB);
+            return View(guest);
         }
 
         [HttpPost]
