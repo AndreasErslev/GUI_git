@@ -11,7 +11,7 @@ namespace Morgenmadsbuffeten_GruppeTo.Models.Entity
         [Key]
         public int GuestId { get; set; }
         public string RoomNbr { get; set; }
-        public int AdultCount { get; set; }
-        public int ChildCount { get; set; }
+        public bool AdultCount { get; set; }
+        public bool ChildCount { get; set; }
     }
 }
