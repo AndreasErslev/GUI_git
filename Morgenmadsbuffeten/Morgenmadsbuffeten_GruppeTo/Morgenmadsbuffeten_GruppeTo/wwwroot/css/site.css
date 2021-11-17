@@ -69,3 +69,19 @@ body {
   white-space: nowrap;
   line-height: 60px; /* Vertically center the text there */
 }
+
+/*  Styles to Resturant */
+#check_label {
+    float: left;
+    display: inline-block;
+    text-align: left;
+}
+
+#check_input {
+    float: left;
+    display: inline-block;
+    margin-left: 0.5%;
+}
+#check_form{
+    margin-top: 5%;
+}

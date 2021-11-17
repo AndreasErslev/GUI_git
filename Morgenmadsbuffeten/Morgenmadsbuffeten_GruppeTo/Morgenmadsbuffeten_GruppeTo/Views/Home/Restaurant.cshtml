@@ -1,5 +1,16 @@
-﻿@*
+﻿@model IEnumerable<Morgenmadsbuffeten_GruppeTo.Models.Entity.Guest>
+@*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
 }
+<h1>Check-in guests</h1>
+        <form asp-action="Create" id="check_form">
+            <label id="check_label">Room number </label> <input type="text" id="check_input" />
+
+            <label id="check_label">Number of adults </label> <input type="text"  id="check_input"/>
+
+            <label id="check_label">Number of children </label> <input type="text"  id="check_input"/>
+
+            <input type="submit" value="Check-in" />
+         </form>
