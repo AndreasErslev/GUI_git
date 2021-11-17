@@ -5,6 +5,9 @@
 @{
 }
 <h1>Check-in guests</h1>
+<div class="row">
+    <p>Please check-in the number of adults and children who wants to enter the breakfast buffet</p>
+</div>
         <form asp-action="Create" id="check_form">
             <label id="check_label">Room number </label> <input type="text" id="check_input" />
 
@@ -12,5 +15,5 @@
 
             <label id="check_label">Number of children </label> <input type="text"  id="check_input"/>
 
-            <input type="submit" value="Check-in" />
+            <input type="submit" value="Check-in" id="check_Btn"/>
          </form>

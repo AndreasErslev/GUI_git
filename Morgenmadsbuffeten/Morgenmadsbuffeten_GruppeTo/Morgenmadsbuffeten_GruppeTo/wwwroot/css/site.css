@@ -82,6 +82,8 @@ body {
     display: inline-block;
     margin-left: 0.5%;
 }
-#check_form{
-    margin-top: 5%;
+#check_Btn{
+    margin-left: 0.5%;
+    background-color: darkseagreen;
+    font-weight: bold;
 }
