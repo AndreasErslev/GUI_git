@@ -1,0 +1,59 @@
+﻿
+@using Morgenmadsbuffeten_GruppeTo.Models.Entity
+@model Morgenmadsbuffeten_GruppeTo.Models.Entity.BreakfastBuffetDB;
+
+
+
+@{
+    ViewData["Title"] = "Kitchen";
+}
+
+<div class="row">
+    <h1>Kitchen Overview</h1>
+</div>
+
+
+@*<dl class="row">
+    <dt class = "col-sm-2">
+        <label id="AmountOfGuests">Expected guests for breakfast</label>
+    </dt>
+    <dd class = "col-sm-10">
+        @Html.DisplayFor(model => model.GuestBreakfastCheckedIn.Count())
+    </dd>
+    <dt class = "col-sm-2">
+       <label id="AmountOfAdultsCheckedin">Amount of adults checked in</label>
+    </dt>
+    <dd class = "col-sm-10">
+        @Html.DisplayFor(model => model.GuestBreakfastCheckedIn.FindAll(guests => guests.AdultCount == true));
+    </dd>
+    <dt class = "col-sm-2">
+        <label id="AmountOfChildrenCheckedin">Amount of children checked in</label>
+    </dt>
+    <dd class = "col-sm-10">
+        @Html.DisplayFor(model => model.GuestBreakfastBookings.FindAll(guests => guests.ChildCount == true))
+    </dd>
+    
+    <dd>
+    <dt class = "col-sm-2">
+        <label id="AmountOfAdultsBooked">Amount of bookings, that has not checked in jet</label>
+    </dt>
+    <dd class = "col-sm-10">
+        @Html.DisplayFor(model => model.GuestBreakfastBookings.Count())
+    </dd>
+    
+    <dd>
+    <dt class = "col-sm-2">
+        <label id="AmountOfAdultsBooked">Amount of adults that has booked, but not checked in jet</label>
+    </dt>
+    <dd class = "col-sm-10">
+        @Html.DisplayFor(model => model.GuestBreakfastBookings.FindAll(guests => guests.AdultCount == true))
+    </dd>
+    
+    <dd>
+    <dt class = "col-sm-2">
+        <label id="AmountOfAdultsBooked">Amount of children that has booked, but not checked in jet</label>
+    </dt>
+    <dd class = "col-sm-10">
+        @Html.DisplayFor(model => model.GuestBreakfastBookings.FindAll(guests => guests.ChildCount == true))
+    </dd>
+</dl>*@

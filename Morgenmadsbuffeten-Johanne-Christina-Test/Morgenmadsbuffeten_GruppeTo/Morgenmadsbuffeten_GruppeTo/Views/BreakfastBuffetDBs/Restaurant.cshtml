@@ -1,0 +1,37 @@
+﻿@model Morgenmadsbuffeten_GruppeTo.Models.Entity.Guest
+
+<h1>Check-in guests</h1>
+<div class="row">
+    <p>Please check-in the number of adults and children who wants to enter the breakfast buffet.</p>
+</div>
+<div class="form-group" asp-action="CheckIn" id="check_form" metod="post">
+    <label for="RoomNumber" id="check_label">Room number </label>
+    <input type="text" id="check_input" name="RoomNumber" />
+</div>
+
+<div class="form-group" asp-action="CheckIn" id="check_form2" metod="post">
+    <label for="Adult" id="check_label">Number of adults </label>
+    <input type="text" id="check_input" name="Adult" />
+</div>
+
+<div class="form-group" asp-action="CheckIn" id="check_form3" metod="post">
+    <label for="Child" id="check_label">Number of children </label>
+    <input type="text" id="check_input" name="Child" />
+</div>
+
+<div class="form-group" asp-action="CheckIn" id="check_form4" metod="post">
+    <input type="submit" value="Check-in" id="check_Btn" />
+    <input type="reset" value="Cancel" id="cancel_Btn" />
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <script src="~/js/music-add.js" asp-append-version="true"></script>
+}
+
+
+
+
+
+
+
