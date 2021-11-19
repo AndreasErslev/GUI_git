@@ -1,0 +1,43 @@
+﻿@*@model Morgenmadsbuffeten_GruppeTo.Models.Entity.Guest
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Guest</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Room_Number)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Room_Number)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Adults)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Adults)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Children)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Children)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.BreakfastBuffetDb)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.BreakfastBuffetDb.BreakfastBuffetDBId)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.GuestId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>*@
