@@ -7,9 +7,11 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using BreakfastBuffet2.Data;
 using Morgenmadsbuffeten_GruppeTo.Models.Entity;
+using Microsoft.AspNetCore.Authorization;
 
 namespace BreakfastBuffet2.Controllers
 {
+    [Authorize]
     public class GuestsController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -30,6 +32,13 @@ namespace BreakfastBuffet2.Controllers
         {
             return View();
         }
+
+        [AllowAnonymous]
+        public async Task<IActionResult> Index()
+        {
+            return View();
+        }
+
 
         public async Task<IActionResult> Kitchen()
         {

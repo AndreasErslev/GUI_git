@@ -63,7 +63,7 @@ namespace BreakfastBuffet2
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Guests}/{action=Reception}/{id?}");
+                    pattern: "{controller=Guests}/{action=Index}/{id?}");
                 endpoints.MapRazorPages();
             });
         }
