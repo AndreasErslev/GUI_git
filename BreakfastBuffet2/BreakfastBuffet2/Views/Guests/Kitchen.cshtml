@@ -28,6 +28,9 @@
             <th>
                 @Html.DisplayNameFor(model => model.Check_In)
             </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Date)
+            </th>
             <th></th>
         </tr>
     </thead>
@@ -49,6 +52,9 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Check_In)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date)
             </td>
         </tr>
         }

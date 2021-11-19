@@ -20,8 +20,15 @@
             <th>
                 @Html.DisplayNameFor(model => model.Children)
             </th>
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Book)
+            </th>
             <th>
                 @Html.DisplayNameFor(model => model.Check_In)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Date)
             </th>
             <th></th>
         </tr>
@@ -29,23 +36,29 @@
     <tbody>
         @foreach (var item in Model)
         {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Room_Number)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Adults)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Children)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Check_In)
-                </td>
-                <td>
-                    <a asp-action="Check_In" asp-route-id="@item.GuestId">Check-in</a>
-                </td>
-            </tr>
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Room_Number)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Adults)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Children)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Book)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Check_In)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date)
+            </td>
+            <td>
+                <a asp-action="Check_In" asp-route-id="@item.GuestId">Check-in</a>
+            </td>
+        </tr>
         }
     </tbody>
 </table>

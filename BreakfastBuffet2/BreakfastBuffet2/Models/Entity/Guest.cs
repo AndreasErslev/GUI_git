@@ -15,6 +15,7 @@ namespace Morgenmadsbuffeten_GruppeTo.Models.Entity
         public bool Children { get; set; }
         public bool Book { get; set; }
         public bool Check_In { get; set; }
+        public string Date { get; set; }
 
     }
 }
