@@ -1,0 +1,30 @@
+﻿@media screen and (max-width: 480px) {
+    body {
+    }
+
+.table{
+        font-size: x-small;
+        table-layout: fixed;
+        display: table-cell;    
+    }
+
+/*    .checkInBtn {
+        padding: 1% 2% 1% 2%;
+        border-top: 1px solid;
+        border-right: 1px solid;
+        border-bottom: 1px solid;
+        border-left: 1px solid;
+        background-color: darkseagreen;
+        color: black;
+        font-size: xx-small;
+        text-align: center;
+        font-weight: bold;
+    }*/
+
+    /*CheckIn*/
+    .checkInImg {
+        display: block;
+        max-width: 35px;
+    }
+}
+
