@@ -1,18 +1,20 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Hello from Johanne" />
+    <img alt="Vue logo" src="../assets/logo.png" class="logo"/>
   </div>
+    <p class="standardText">Welcome to the model management system</p>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
-
-export default {
-  name: "Home",
-  components: {
-    HelloWorld,
-  },
-};
+    
 </script>
+
+<style>
+    .logo{
+        width: 40%
+    }
+    .standardText
+    {
+        font-size: 18px;
+    }
+</style>
