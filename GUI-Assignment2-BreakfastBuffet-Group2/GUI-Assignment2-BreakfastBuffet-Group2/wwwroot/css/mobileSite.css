@@ -1,0 +1,17 @@
+﻿@media screen and (max-width: 480px) {
+    body {
+    }
+
+.table{
+        font-size: x-small;
+        table-layout: fixed;
+        display: table-cell;    
+    }
+
+    /*CheckIn*/
+    .checkInImg {
+        display: block;
+        max-width: 35px;
+    }
+}
+
