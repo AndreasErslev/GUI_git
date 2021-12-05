@@ -2,37 +2,39 @@
   <div class="Login">
     <h1>Please login to your account</h1>
   </div>
-  <div>
-    <div class="row">
-      <div class="col-md-10 loginStyle">
-        <label for="email">E-mail: </label>
-        <input
-          type="text"
-          v-model="email"
-          name="Email"
-          required
-          class="inputStyle"
-        />
+  <div class="container">
+      <div class="row justify-content-center loginStyle">
+          <div class="col-md-2">
+              <label for="email">E-mail: </label>
+          </div>
+          <div class="col-md-4">
+              <input type="text"
+                     v-model="email"
+                     name="Email"
+                     required
+                     class="inputStyle" />
+          </div>
       </div>
-      <div class="col-md-10 loginStyle">
-        <label for="password">Password: </label>
-        <input
-          type="text"
-          v-model="password"
-          name="Password"
-          required
-          class="inputStyle"
-        />
+      <div class="row justify-content-center loginStyle">
+          <div class="col-md-2">
+              <label for="password">Password: </label>
+          </div>
+          <div class="col-md-4">
+              <input type="text"
+                     v-model="password"
+                     name="Password"
+                     required
+                     class="inputStyle" />
+          </div>
       </div>
-      <div class="col-md-10 loginStyle">
-        <input
-          type="button"
-          value="Login"
-          v-on:click="summitLogin"
-          class="buttonStyle"
-        />
+      <div class="row justify-content-center loginStyle">
+          <div class="col-md-6">
+              <input type="button"
+                     value="Login"
+                     v-on:click="summitLogin"
+                     class="buttonStyle" />
+          </div>
       </div>
-    </div>
   </div>
 </template>
 
@@ -86,5 +88,6 @@ export default {
 .buttonStyle {
   background-color: lightgreen;
   font-weight: bold;
+  float: right;
 }
 </style>
