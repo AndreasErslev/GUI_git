@@ -91,6 +91,7 @@ var url = document.location.origin + "/api/Managers";
 export default {
   data() {
     return {
+      isManager: "",
       email: "",
       password: "",
       managerFName: "",
@@ -101,6 +102,7 @@ export default {
   methods: {
     summitLogin() {
       var bodyData = {
+        isManager: this.isManager,
         email: this.email,
         password: this.password,
         managerFName: this.managerFName,
@@ -124,7 +126,7 @@ export default {
           console.log("ERROR", response);
           alert("The user failed to be added");
         });
-
+      this.isManager = "";
       this.email = "";
       this.password = "";
       this.managerFName = "";
