@@ -3,7 +3,7 @@
     <div id="nav">
         <router-link to="/">Home</router-link> |
         <!--<router-link to="/about">About</router-link> |-->
-        <router-link to="/CreateManager">Create new manager</router-link> |
+        <router-link to="/CreateManager" v-if="role ">Create new manager</router-link> |
         <router-link to="/CreateModel">Create new model</router-link> |
         <router-link to="/Login">Login</router-link> |
         <router-link to="/AddJob">Add Job</router-link> |

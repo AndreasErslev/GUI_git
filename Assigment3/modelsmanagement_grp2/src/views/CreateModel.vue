@@ -255,52 +255,29 @@ import router from './main.js';
 
 <script>
 var url = "https://localhost:44368/api/Models";
-export default {
-  data() {
-    return {
-      Account: "",
-      FirstName: "",
-      LastName: "",
-      Email: "",
-      PhoneNo: "",
-      AddresLine1: "",
-      AddresLine2: "",
-      Zip: "",
-      City: "",
-      Country: "",
-      BirthDate: "",
-      Nationality: "",
-      Height: "",
-      ShoeSize: "",
-      HairColor: "",
-      EyeColor: "",
-      Comments: "",
-    };
-  },
-  methods: {
-    summitModel() {
-      var bodyData = {
-        Account: this.Account,
-        FirstName: this.FirstName,
-        LastName: this.LastName,
-        Email: this.Email,
-        PhoneNo: this.PhoneNo,
-        AddresLine1: this.AddresLine1,
-        AddresLine2: this.AddresLine2,
-        Zip: this.Zip,
-        City: this.City,
-        Country: this.Country,
-        BirthDate: this.BirthDate,
-        Nationality: this.Nationality,
-        Height: this.Height,
-        ShoeSize: this.ShoeSize,
-        HairColor: this.HairColor,
-        EyeColor: this.EyeColor,
-        Comments: this.Comments,
-      };
-
-
+    export default {
+        data() {
+            return {
+                Account: "",
+                FirstName: "",
+                LastName: "",
+                Email: "",
+                PhoneNo: "",
+                AddresLine1: "",
+                AddresLine2: "",
+                Zip: "",
+                City: "",
+                Country: "",
+                BirthDate: "",
+                Nationality: "",
+                Height: "",
+                ShoeSize: "",
+                HairColor: "",
+                EyeColor: "",
+                Comments: "",
+            };
         },
+
         methods: {
             summitModel() {
                 var bodyData = {
@@ -351,7 +328,6 @@ export default {
                 this.City = "";
                 this.Country = "";
                 this.BirthDate = "";
-                this.Nationality = "";
                 this.Height = "";
                 this.ShoeSize = "";
                 this.HairColor = "";
@@ -360,6 +336,7 @@ export default {
             },
         },
     };
+
 </script>
 
 <style>
