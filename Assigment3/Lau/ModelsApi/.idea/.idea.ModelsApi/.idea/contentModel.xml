@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="$PROJECT_DIR$" t="IncludeFlat">
+      <e p=".editorconfig" t="Include" />
+      <e p="ModelsApi" t="IncludeRecursive">
+        <e p="appsettings.Development.json" t="Include" />
+        <e p="appsettings.json" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Controllers" t="Include">
+          <e p="AccountController.cs" t="Include" />
+          <e p="ExpensesController.cs" t="Include" />
+          <e p="JobsController.cs" t="Include" />
+          <e p="ManagersController.cs" t="Include" />
+          <e p="ModelsController.cs" t="Include" />
+        </e>
+        <e p="Data" t="Include">
+          <e p="ApplicationDbContext.cs" t="Include" />
+          <e p="SeedData.cs" t="Include" />
+        </e>
+        <e p="GlobalSuppressions.cs" t="Include" />
+        <e p="Migrations" t="Include">
+          <e p="20200506102919_InitialSchema.cs" t="Include" />
+          <e p="20200506102919_InitialSchema.Designer.cs" t="Include" />
+          <e p="ApplicationDbContextModelSnapshot.cs" t="Include" />
+        </e>
+        <e p="Models" t="Include">
+          <e p="DTOs" t="Include">
+            <e p="Job.cs" t="Include" />
+            <e p="Login.cs" t="Include" />
+            <e p="Manager.cs" t="Include" />
+            <e p="Model.cs" t="Include" />
+            <e p="ModelDetails.cs" t="Include" />
+            <e p="NewExpense.cs" t="Include" />
+            <e p="NewJob.cs" t="Include" />
+            <e p="Token.cs" t="Include" />
+          </e>
+          <e p="Entities" t="Include">
+            <e p="EfAccount.cs" t="Include" />
+            <e p="EfExpense.cs" t="Include" />
+            <e p="EfJob.cs" t="Include" />
+            <e p="EfJobModel.cs" t="Include" />
+            <e p="EfManager.cs" t="Include" />
+            <e p="EfModel.cs" t="Include" />
+          </e>
+        </e>
+        <e p="ModelsApi.csproj" t="IncludeRecursive" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp3.1" t="Include">
+              <e p="ModelsApi.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="Program.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="launchSettings.json" t="Include" />
+        </e>
+        <e p="Startup.cs" t="Include" />
+        <e p="Utilities" t="Include">
+          <e p="AppSettings.cs" t="Include" />
+          <e p="JWTUtilities.cs" t="Include" />
+          <e p="ModelsProfile.cs" t="Include" />
+        </e>
+      </e>
+      <e p="ModelsApi.sln" t="IncludeFlat" />
+      <e p="packages" t="ExcludeRecursive" />
+      <e p="Solution Items" t="Include" />
+    </e>
+    <e p="$USER_HOME$/Library/Caches/Rider2019.3/extResources" t="IncludeRecursive" />
+    <e p="$USER_HOME$/Library/Caches/Rider2019.3/resharper-host/local/Transient/ReSharperHost/v193/SolutionCaches/_ModelsApi.1443447108.00" t="ExcludeRecursive" />
+    <e p="$APPLICATION_CONFIG_DIR$/consoles/db" t="IncludeRecursive" />
+    <e p="$APPLICATION_CONFIG_DIR$/extensions" t="IncludeRecursive" />
+  </component>
+</project>
