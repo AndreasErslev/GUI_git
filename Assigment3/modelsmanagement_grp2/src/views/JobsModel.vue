@@ -1,7 +1,7 @@
 <template>
     <div class="jobs">
         <p>
-            Jobs
+            List of jobs
         </p>
     </div>
 
