@@ -60,7 +60,7 @@
 </template>
 
 <script>
-    var url = "https://localhost:44368/api/Expences";
+var url = "https://localhost:44368/api/Expences";
 export default {
   data() {
     return {

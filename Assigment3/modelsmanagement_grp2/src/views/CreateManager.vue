@@ -101,7 +101,7 @@
 </template>
 
 <script>
-    var url = "https://localhost:44368/api/Managers";
+var url = "https://localhost:44368/api/Managers";
 export default {
   data() {
     return {
@@ -147,7 +147,19 @@ export default {
       this.managerLName = "";
       this.managerAccount = "";
     },
-  },
+        },
+  //  computed: {
+  //  userRole: function () {
+  //    let role = this.$store.state.userRole;
+  //    if (role === "Manager") {
+  //      router.push("/CreateManager");
+  //    } else if (role === "Model") {
+  //      router.push("/CreateModel");
+  //    }
+
+  //    return role;
+  //  },
+  //},
 };
 </script>
 

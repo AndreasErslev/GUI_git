@@ -288,7 +288,7 @@
 </template>
 
 <script>
-    var url = "https://localhost:44368/api/Models";
+var url = "https://localhost:44368/api/Models";
 export default {
   data() {
     return {
