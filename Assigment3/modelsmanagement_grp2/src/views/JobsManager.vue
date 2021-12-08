@@ -48,6 +48,7 @@
                 <td>
                     {{job.models}}
                 </td>
+
             </tr>
 
         </tbody>
@@ -82,6 +83,10 @@
                     .catch(response => {
                         console.log("ERROR", response);
                     });
+            }
+
+            deleteModel() {
+
             }
         }
 
