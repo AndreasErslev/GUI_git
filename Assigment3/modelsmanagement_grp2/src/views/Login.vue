@@ -1,4 +1,4 @@
-<template>
+    <template>
   <div class="Login">
     <h1>Please login to your account</h1>
   </div>
@@ -78,6 +78,7 @@ export default {
 };
 </script>
 
+
 <style>
 .loginStyle {
   margin-bottom: 2%;
@@ -88,6 +89,7 @@ export default {
 .buttonStyle {
   background-color: lightgreen;
   font-weight: bold;
-  float: right;
+  float: inherit;
+  margin-left: 59%;
 }
 </style>
