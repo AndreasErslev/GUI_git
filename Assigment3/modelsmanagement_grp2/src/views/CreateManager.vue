@@ -87,7 +87,7 @@
 </template>
 
 <script>
-var url = document.location.origin + "/api/Managers";
+    var url = "https://localhost:44368/api/Managers";
 export default {
   data() {
     return {

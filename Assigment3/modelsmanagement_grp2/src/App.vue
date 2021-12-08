@@ -5,6 +5,7 @@
         <router-link to="/CreateManager">Create new manager</router-link> |
         <router-link to="/CreateModel">Create new model</router-link> |
         <router-link to="/Login">Login</router-link> |
+        <router-link to="/Add Job">Add Job</router-link> |
         <router-link to="/Expences">Expences</router-link>
     </div>
   <router-view />

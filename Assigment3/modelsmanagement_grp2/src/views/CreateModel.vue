@@ -252,7 +252,7 @@
 </template>
 
 <script>
-var url = document.location.origin + "/api/Account";
+    var url = "https://localhost:44368/api/Models";
 export default {
   data() {
     return {
