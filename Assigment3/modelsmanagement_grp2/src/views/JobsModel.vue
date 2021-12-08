@@ -9,18 +9,12 @@
         <thead>
             <tr>
                 <th>
-                    Model
-                </th>
-                <th>
                     Jobs
                 </th>
             </tr>
         </thead>
         <tbody>
             <tr v-for="job in jobs">
-                <td>
-                    {{ job.model }}
-                </td>
                 <td>
                     {{ job.job }}
                 </td>
