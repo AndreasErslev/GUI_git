@@ -1,6 +1,6 @@
 <template>
     <div class="CreateManager">
-        <h1>Create a new Model</h1>
+        <h1>Create a new model account</h1>
     </div>
     <div class="container">
         <div class="row justify-content-center CMStyle">
