@@ -62,7 +62,7 @@ export default {
     };
   },
   methods: {
-    summitLogin() {
+      addExpence() {
       var bodyData = {
           expenceText: this.email,
           date: this.date,
@@ -79,11 +79,11 @@ export default {
         .then((response) => response.json())
         .then((response) => {
           console.log("GOOD", response);
-          alert("The user got added");
+          alert("The expence got added");
         })
         .catch((response) => {
           console.log("ERROR", response);
-          alert("The user failed to be added");
+          alert("The expence failed to be added");
         });
 
           this.expenceText = "";

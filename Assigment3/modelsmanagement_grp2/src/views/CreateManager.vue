@@ -100,7 +100,7 @@ export default {
     };
   },
   methods: {
-    summitLogin() {
+      createManager() {
       var bodyData = {
         isManager: this.isManager,
         email: this.email,
