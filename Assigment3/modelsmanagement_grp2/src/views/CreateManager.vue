@@ -101,7 +101,7 @@
 </template>
 
 <script>
-    var url = "https://localhost:44368/api/Managers";
+var url = "https://localhost:44368/api/Managers";
 export default {
   data() {
     return {
@@ -147,7 +147,7 @@ export default {
       this.managerLName = "";
       this.managerAccount = "";
     },
-  },
+        },
 };
 </script>
 

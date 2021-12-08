@@ -1,6 +1,21 @@
 <template>
-    <div class="AddJob">
-        <h1>Add job</h1>
+  <div class="AddJob">
+    <h1>Add job</h1>
+  </div>
+  <div class="container">
+    <div class="row justify-content-center loginStyle">
+      <div class="col-md-2">
+        <label for="customer">Customer: </label>
+      </div>
+      <div class="col-md-4">
+        <input
+          type="text"
+          v-model="customer"
+          name="Customer"
+          required
+          class="inputStyle"
+        />
+      </div>
     </div>
     <div class="container">
         <div class="row justify-content-center loginStyle">
@@ -82,9 +97,62 @@
             </div>
         </div>
     </div>
+    <div class="row justify-content-center loginStyle">
+      <div class="col-md-2">
+        <label for="days">Days: </label>
+      </div>
+      <div class="col-md-4">
+        <input
+          type="text"
+          v-model="days"
+          name="Days"
+          required
+          class="inputStyle"
+        />
+      </div>
+    </div>
+    <div class="row justify-content-center loginStyle">
+      <div class="col-md-2">
+        <label for="location">Location: </label>
+      </div>
+      <div class="col-md-4">
+        <input
+          type="text"
+          v-model="location"
+          name="Location"
+          required
+          class="inputStyle"
+        />
+      </div>
+    </div>
+    <div class="row justify-content-center loginStyle">
+      <div class="col-md-2">
+        <label for="comments">Comments: </label>
+      </div>
+      <div class="col-md-4">
+        <textarea
+          v-model="comments"
+          name="Comments"
+          required
+          class="inputStyle"
+        />
+      </div>
+    </div>
+    <div class="row justify-content-center loginStyle">
+      <div class="col-md-6">
+        <input
+          type="button"
+          value="Add Job"
+          v-on:click="summitJob"
+          class="buttonStyle"
+        />
+      </div>
+    </div>
+  </div>
 </template>
 
-<script>var url = "https://localhost:44368/api/Jobs";
+<script>
+var url = "https://localhost:44368/api/Jobs";
 export default {
   data() {
     return {
@@ -130,23 +198,25 @@ export default {
           this.location = "";
           this.comments = "";
           this.models = [];
+
     },
   },
-};</script>
+};
+</script>
 
 <style>
-    .loginStyle {
-        margin-bottom: 2%;
-    }
+.loginStyle {
+  margin-bottom: 2%;
+}
 
-    .inputStyle {
-        margin-left: 2%;
-    }
+.inputStyle {
+  margin-left: 2%;
+}
 
-    .buttonStyle {
-        background-color: lightgreen;
-        font-weight: bold;
-        float: inherit;
-        margin-left: 53%!important;
-    }
+.buttonStyle {
+  background-color: lightgreen;
+  font-weight: bold;
+  float: inherit;
+  margin-left: 53% !important;
+}
 </style>
