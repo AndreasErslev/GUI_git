@@ -88,6 +88,7 @@ export default {
 .buttonStyle {
   background-color: lightgreen;
   font-weight: bold;
-  float: right;
+  float: inherit;
+  margin-left: 59%;
 }
 </style>
