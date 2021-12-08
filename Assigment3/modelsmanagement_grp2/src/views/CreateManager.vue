@@ -148,18 +148,6 @@ export default {
       this.managerAccount = "";
     },
         },
-  //  computed: {
-  //  userRole: function () {
-  //    let role = this.$store.state.userRole;
-  //    if (role === "Manager") {
-  //      router.push("/CreateManager");
-  //    } else if (role === "Model") {
-  //      router.push("/CreateModel");
-  //    }
-
-  //    return role;
-  //  },
-  //},
 };
 </script>
 
