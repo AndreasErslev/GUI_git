@@ -5,7 +5,10 @@
         <router-link to="/CreateManager">Create new manager</router-link> |
         <router-link to="/CreateModel">Create new model</router-link> |
         <router-link to="/Login">Login</router-link> |
-        <router-link to="/Add Job">Add Job</router-link> |
+        <router-link to="/AddJob">Add Job</router-link> |
+        <router-link to="/AddModelToJob">Add model to job</router-link> |
+        <router-link to="/Jobs">Jobs</router-link> |
+        <router-link to="/JobsModel">Add model to job</router-link> |
         <router-link to="/Expences">Expences</router-link>
     </div>
   <router-view />

@@ -59,7 +59,18 @@
                 <textarea v-model="comments"
                           name="Comments"
                           required
-                          class="inputStyle"/>
+                          class="inputStyle" />
+            </div>
+        </div>
+        <div class="row justify-content-center loginStyle">
+            <div class="col-md-2">
+                <label for="models">Models: </label>
+            </div>
+            <div class="col-md-4">
+                <textarea v-model="models"
+                          name="Models"
+                          required
+                          class="inputStyle" />
             </div>
         </div>
         <div class="row justify-content-center loginStyle">
@@ -81,7 +92,8 @@ export default {
      startDate: "",
      days: "",
      location: "",
-     comments: ""
+     comments: "",
+     models: []
     };
   },
   methods: {
@@ -91,7 +103,8 @@ export default {
             startDate: this.startDate,
             days: this.days,
             location: this.location,
-            comments: this.comments
+            comments: this.comments,
+            models: this.models
       };
 
       var promise = fetch(url, {
@@ -116,6 +129,7 @@ export default {
           this.days = "";
           this.location = "";
           this.comments = "";
+          this.models = [];
     },
   },
 };</script>

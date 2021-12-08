@@ -5,7 +5,7 @@
         </p>
     </div>
 
-    <table class="table-admin table-bordered" id="job-app">
+    <table>
         <thead>
             <tr>
                 <th>
@@ -22,6 +22,9 @@
                 </th>
                 <th>
                     Comments
+                </th>
+                <th>
+                    Models
                 </th>
             </tr>
         </thead>
@@ -42,6 +45,9 @@
                 <td>
                     {{ job.comments }}
                 </td>
+                <td>
+                    {{job.models}}
+                </td>
             </tr>
 
         </tbody>
@@ -50,7 +56,7 @@
 
 
 <script>
-    var url = document.location.origin + "/api/Jobs";
+    var url = "https://localhost:44368/api/Jobs";
     export default {
         data() {
             return {
