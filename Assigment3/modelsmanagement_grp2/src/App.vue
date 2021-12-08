@@ -1,15 +1,16 @@
 <template>
 
     <div id="nav">
-        <router-link to="/">Home</router-link> |
+        <router-link to="/">Home |</router-link>
         <!--<router-link to="/about">About</router-link> |-->
-        <router-link to="/CreateManager" v-if="role ">Create new manager</router-link> |
-        <router-link to="/CreateModel">Create new model</router-link> |
-        <router-link to="/Login">Login</router-link> |
-        <router-link to="/AddJob">Add Job</router-link> |
-        <router-link to="/AddModelToJob">Add model to job</router-link> |
-        <router-link to="/Jobs">Jobs</router-link> |
-        <router-link to="/Expences">Expences</router-link>
+        <router-link to="/CreateManager" v-if="role == 'Manager'">Create new manager |</router-link>
+        <router-link to="/CreateModel" v-if="role == 'Manager'">Create new model |</router-link>
+        <router-link to="/Login">Login |</router-link>
+        <router-link to="/AddJob" v-if="role == 'Manager'">Add Job |</router-link>
+        <router-link to="/AddModelToJob" v-if="role == 'Manager'">Add model to job |</router-link>
+        <router-link to="/JobsManager" v-if="role == 'Manager'">Jobs |</router-link>
+        <router-link to="/JobsModel" v-if="role == 'Model'">Jobs |</router-link>
+        <router-link to="/Expences" v-if="role == 'Model'">Expences</router-link>
     </div>
   <router-view />
 </template>
