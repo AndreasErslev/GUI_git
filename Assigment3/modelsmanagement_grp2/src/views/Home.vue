@@ -5,8 +5,6 @@
   <p class="standardText">Welcome to the model management system</p>
 </template>
 
-<script></script>
-
 <style>
 .logo {
   width: 40%;

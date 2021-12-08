@@ -1,11 +1,10 @@
 import { createRouter, createWebHashHistory } from "vue-router";
-import Home from "../views/Home.vue";
 
 const routes = [
   {
     path: "/",
     name: "Home",
-    component: Home,
+    component: () => import("../views/Home.vue"),
   },
   {
     path: "/about",
@@ -30,18 +29,23 @@ const routes = [
     path: "/Login",
     name: "Login",
     component: () => import("../views/Login.vue"),
-    },
-    {
-        path: "/Add Job",
-        name: "Add Job",
-        component: () => import("../views/AddJob.vue"),
-    },
-    {
-        path: "/Jobs",
-        name: "Show jobs",
-        component: () => import("../views/AddJob.vue"),
-    },
-    {
+  },
+  {
+    path: "/AddJob",
+    name: "Add Job",
+    component: () => import("../views/AddJob.vue"),
+  },
+  {
+    path: "/JobsManager",
+    name: "Jobs for manager",
+    component: () => import("../views/JobsManager.vue"),
+  },
+  {
+    path: "/JobsModel",
+    name: "Jobs for model",
+    component: () => import("../views/JobsModel.vue"),
+  },
+  {
     path: "/Expences",
     name: "Expences",
     component: () => import("../views/Expences.vue"),

@@ -36,7 +36,7 @@
         <input
           type="button"
           value="Login"
-          v-on:click="summitLogin"
+          v-on:click="submitLogin"
           class="buttonStyle"
         />
       </div>
@@ -45,7 +45,7 @@
 </template>
 
 <script>
-var url = document.location.origin + "/api/Account";
+var url = "https://localhost:44368/api/Account/login";
 export default {
   data() {
     return {
@@ -54,83 +54,63 @@ export default {
     };
   },
   methods: {
-    summitLogin() {
+    async submitLogin() {
       var bodyData = {
         email: this.email,
         password: this.password,
       };
-
-      var promise = fetch(url, {
-        body: JSON.stringify(bodyData),
-        headers: new Headers({ "Content-type": "application/json" }),
-        method: "POST",
-      });
-
-      promise
-        .then((response) => response.json())
-        .then((response) => {
-          console.log("GOOD", response);
-          alert("The user got added");
-        })
-        .catch((response) => {
-          console.log("ERROR", response);
-          alert("The user failed to be added");
+      try {
+        let response = await fetch(url, {
+          method: "POST",
+          body: JSON.stringify(bodyData), // Assumes data is in an object called form
+          headers: new Headers({
+            "Content-Type": "application/json",
+          }),
         });
+        if (response.ok) {
+          let token = await response.json();
+          localStorage.setItem("token", token.jwt);
+          // console.log("Got token: " + token.jwt);
+          let payload = this.parseJwt(token.jwt);
 
+          Object.keys(payload).forEach((key) => {
+            if (key.indexOf("role") !== -1) {
+              payload["role"] = payload[key];
+            }
+
+            if (key.indexOf("emailaddress") !== -1) {
+              payload["email"] = payload[key];
+            }
+          });
+          localStorage.setItem("email", payload.email);
+          localStorage.setItem("role", payload.role);
+          localStorage.setItem("modelId", payload.ModelId);
+          // G� til home siden efter login:
+          this.$router.push("/");
+        } else {
+          alert("Server returned: " + response.statusText);
+        }
+      } catch (err) {
+        alert("Error: " + err);
+      }
       this.email = "";
       this.password = "";
     },
-  },
-  async login() {
-    let url = "https://localhost:44368/api/account/login";
-    try {
-      let response = await fetch(url, {
-        method: "POST",
-        body: JSON.stringify(this.form), // Assumes data is in an object called form
-        headers: new Headers({
-          "Content-Type": "application/json",
-        }),
-      });
-      if (response.ok) {
-        let token = await response.json();
-        localStorage.setItem("token", token.jwt);
-        // Change view to some other component
-        let payload = this.parseJwt(token);
-        //Make some props easier to access
 
-        Object.keys(payload).forEach((key) => {
-          if (key.indexOf("role") !== -1) {
-            payload["role"] = payload[key];
-          }
+    parseJwt(token) {
+      var base64Url = token.split(".")[1];
+      var base64 = base64Url.replace(/-/g, "+").replace(/_/g, "/");
+      var jsonPayload = decodeURIComponent(
+        atob(base64)
+          .split("")
+          .map(function (c) {
+            return "%" + ("00" + c.charCodeAt(0).toString(16)).slice(-2);
+          })
+          .join("")
+      );
 
-          if (key.indexOf("emailaddress") !== -1) {
-            payload["email"] = payload[key];
-          }
-        });
-        localStorage.setItem("email", payload.email);
-        localStorage.setItem("role", payload.role);
-        //Set id og rolle
-      } else {
-        alert("Server returned: " + response.statusText);
-      }
-    } catch (err) {
-      alert("Error: " + err);
-    }
-    return;
-  },
-  parseJwt(token) {
-    var base64Url = token.split(".")[1];
-    var base64 = base64Url.replace(/-/g, "+").replace(/_/g, "/");
-    var jsonPayload = decodeURIComponent(
-      atob(base64)
-        .split("")
-        .map(function (c) {
-          return "%" + ("00" + c.charCodeAt(0).toString(16)).slice(-2);
-        })
-        .join("")
-    );
-
-    return JSON.parse(jsonPayload);
+      return JSON.parse(jsonPayload);
+    },
   },
 };
 </script>

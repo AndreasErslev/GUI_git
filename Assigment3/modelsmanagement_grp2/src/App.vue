@@ -1,19 +1,53 @@
 <template>
-
-    <div id="nav">
-        <router-link to="/">Home |</router-link>
-        <!--<router-link to="/about">About</router-link> |-->
-        <router-link to="/CreateManager" v-if="role == 'Manager'">Create new manager |</router-link>
-        <router-link to="/CreateModel" v-if="role == 'Manager'">Create new model |</router-link>
-        <router-link to="/Login">Login |</router-link>
-        <router-link to="/AddJob" v-if="role == 'Manager'">Add Job |</router-link>
-        <router-link to="/AddModelToJob" v-if="role == 'Manager'">Add model to job |</router-link>
-        <router-link to="/JobsManager" v-if="role == 'Manager'">Jobs |</router-link>
-        <router-link to="/JobsModel" v-if="role == 'Model'">Jobs |</router-link>
-        <router-link to="/Expences" v-if="role == 'Model'">Expences</router-link>
-    </div>
+  <div id="nav">
+    <router-link to="/">Home | </router-link>
+    <!--<router-link to="/about">About</router-link> |-->
+    <router-link to="/CreateManager" v-if="role == 'Manager'"
+      >Create new manager |
+    </router-link>
+    <router-link to="/CreateModel" v-if="role == 'Manager'"
+      >Create new model |
+    </router-link>
+    <router-link to="/Login" v-if="role == ''">Login | </router-link>
+    <router-link to="/AddJob" v-if="role == 'Manager'">Add Job | </router-link>
+    <router-link to="/JobsManager" v-if="role == 'Manager'"
+      >Jobs |
+    </router-link>
+    <router-link to="/JobsModel" v-if="role == 'Model'">Jobs | </router-link>
+    <router-link to="/Expences" v-if="role == 'Model'">Expences | </router-link>
+    <a href="#" v-if="role != ''" v-on:click="logout()">Logout</a>
+  </div>
   <router-view />
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      role: "",
+    };
+  },
+  mounted() {
+    this.role = localStorage.getItem("role");
+  },
+  methods: {
+    logout() {
+      // fjerner token, email og rolle, samt g�r til login siden
+      localStorage.setItem("token", "");
+      localStorage.setItem("email", "");
+      localStorage.setItem("role", "");
+      localStorage.setItem("modelId", "");
+      this.$router.push("/Login");
+    },
+  },
+  watch: {
+    $route() {
+      // Hver gang man skrifter route hentes rollen
+      this.role = localStorage.getItem("role");
+    },
+  },
+};
+</script>
 
 <style>
 #app {

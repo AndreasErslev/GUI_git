@@ -126,8 +126,11 @@ export default {
 
       var promise = fetch(url, {
         body: JSON.stringify(bodyData),
-        headers: new Headers({ "Content-type": "application/json" }),
         method: "POST",
+        headers: {
+          "content-type": "application/json",
+          Authorization: "Bearer " + localStorage.getItem("token"),
+        },
       });
 
       promise
@@ -147,7 +150,7 @@ export default {
       this.managerLName = "";
       this.managerAccount = "";
     },
-        },
+  },
 };
 </script>
 
