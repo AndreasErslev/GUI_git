@@ -7,7 +7,7 @@
     <table class="job-manager-frist-tabel">
         <thead>
             <tr>
-                <th>Customers</th>
+                <th>Customer</th>
                 <th>Start Date</th>
                 <th>Days</th>
                 <th>Location</th>
@@ -19,7 +19,7 @@
         <tbody>
             <tr v-for="(job, jobIndex) in jobs" :key="jobIndex">
                 <td>
-                    {{ job.customers }}
+                    {{ job.customer }}
                 </td>
                 <td>
                     {{ job.startDate }}

@@ -1,4 +1,4 @@
-<template>
+﻿<template>
     <div>
         <img alt="Vue logo" src="../assets/logo.png" class="logo" />
     </div>
@@ -40,35 +40,47 @@
                        class="inputStyle" />
             </div>
         </div>
-
-        <!--<div class="row justify-content-center ModelExpence">
-    <div class="col-md-6">
-      <input
-        type="button"
-        value="Add Expence"
-        v-on:click="addExpence"
-        class="buttonStyle"
-      />
-    </div>-->
         <div class="row justify-content-center ModelExpence">
-            <table>
-                <thead>
-                    <tr>
-                        <td>
-                            Choose job to add expences to
-                        </td>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td v-for="(expence, expenceIndex) in expences" :key="expenceIndex">
-                            <a href="#" v-on:click="addExpenceToJob(expence.modelId, expence.jobId)">Add expence {{expence.amount}} </a>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="col-md-2">
+                <label for="Job">Job: </label>
+            </div>
+            <div class="col-md-4">
+                <select v-model="jobId">
+                    <option v-for="job in jobs" v-bind:key="job.efJobId" v-bind:value="job.efJobId">
+                        {{ job.customer }}
+                    </option>
+                </select>
+            </div>
             </div>
         </div>
+
+    <div class="row justify-content-center ModelExpence">
+        <div class="col-md-6">
+            <input type="button"
+                   value="Add Expence"
+                   v-on:click="addExpence"
+                   class="buttonStyle" />
+        </div>
+    </div>
+            <!--<div class="row justify-content-center ModelExpence">
+        <table>
+            <thead>
+                <tr>
+                    <td>
+                        Choose job to add expences to
+                    </td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td v-for="(expence, expenceIndex) in expences" :key="expenceIndex">
+                        <a href="#" v-on:click="addExpenceToJob(expence.modelId, expence.jobId)">Add expence {{expence.amount}} </a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        </div>
+    </div>-->
 </template>
 
 <script>
@@ -80,7 +92,32 @@
                 date: "",
                 amount: "",
                 expence: [],
+                jobs: [],
+                jobId: "",
             };
+        },
+        mounted() {
+            var Joburl = "https://localhost:44368/api/jobs";
+            var promise = fetch(Joburl, {
+                method: "GET",
+                headers: {
+                    "content-type": "application/json",
+                    Authorization: "Bearer " + localStorage.getItem("token"),
+                },
+            });
+
+            promise
+                .then((response) => response.json())
+                .then((response) => {
+                    console.log("GOOD", response);
+
+                    // inds�tte data i tabel:
+                    console.log(JSON.stringify(response));
+                    this.jobs = response;
+                })
+                .catch((response) => {
+                    console.log("ERROR", response);
+                });
         },
         methods: {
             addExpenceToJob() {

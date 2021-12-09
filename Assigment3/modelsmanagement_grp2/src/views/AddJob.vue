@@ -79,7 +79,7 @@ var url = "https://localhost:44368/api/Jobs";
 export default {
   data() {
     return {
-      customers: "",
+      customer: "",
       startDate: "",
       days: "",
       location: "",
@@ -89,9 +89,9 @@ export default {
   methods: {
     submitJob() {
       var bodyData = {
-        customers: this.customers,
+        customer: this.customer,
         startDate: this.startDate,
-        days: this.days,
+        days: Number.parseInt(this.days),
         location: this.location,
         comments: this.comments,
       };
@@ -116,7 +116,7 @@ export default {
           alert("The job failed to be added");
         });
 
-      this.customers = "";
+      this.customer = "";
       this.startDate = "";
       this.days = "";
       this.location = "";
