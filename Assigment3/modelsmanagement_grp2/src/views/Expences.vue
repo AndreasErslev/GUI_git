@@ -41,61 +41,81 @@
             </div>
         </div>
 
+        <!--<div class="row justify-content-center ModelExpence">
+    <div class="col-md-6">
+      <input
+        type="button"
+        value="Add Expence"
+        v-on:click="addExpence"
+        class="buttonStyle"
+      />
+    </div>-->
         <div class="row justify-content-center ModelExpence">
-            <div class="col-md-6">
-                <input type="button"
-                       value="Add Expence"
-                       v-on:click="addExpence"
-                       class="buttonStyle" />
+            <table>
+                <thead>
+                    <tr>
+                        <td>
+                            Choose job to add expences to
+                        </td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td v-for="(expence, expenceIndex) in expences" :key="expenceIndex">
+                            <a href="#" v-on:click="addExpenceToJob(expence.modelId, expence.jobId)">Add expence {{expence.amount}} </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
             </div>
         </div>
-    </div>
 </template>
 
 <script>
-var url = "https://localhost:44368/api/Expences";
-export default {
-  data() {
-    return {
-      expenceText: "",
-      date: "",
-      amount: "",
-    };
-  },
-  methods: {
-    addExpence() {
-      var bodyData = {
-        expenceText: this.email,
-        date: this.date,
-        amount: this.amount,
-      };
-
-      var promise = fetch(url, {
-        body: JSON.stringify(bodyData),
-        method: "POST",
-        headers: {
-          "content-type": "application/json",
-          Authorization: "Bearer " + localStorage.getItem("token"),
+    var url = "https://localhost:44368/api/Expences";
+    export default {
+        data() {
+            return {
+                expenceText: "",
+                date: "",
+                amount: "",
+                expence: [],
+            };
         },
-      });
+        methods: {
+            addExpenceToJob() {
+                var bodyData = {
+                    expenceText: this.expenceText,
+                    date: this.date,
+                    amount: this.amount,
+                };
 
-      promise
-        .then((response) => response.json())
-        .then((response) => {
-          console.log("GOOD", response);
-          alert("The expence got added");
-        })
-        .catch((response) => {
-          console.log("ERROR", response);
-          alert("The expence failed to be added");
-        });
+                var promise = fetch(url, {
+                    body: JSON.stringify(bodyData),
+                    method: "POST",
+                    headers: {
+                        "content-type": "application/json",
+                        Authorization: "Bearer " + localStorage.getItem("token"),
+                    },
+                });
 
-      this.expenceText = "";
-      this.date = "";
-      this.amount = "";
-    },
-  },
-};
+                promise
+                    .then((response) => response.json())
+                    .then((response) => {
+                        console.log("GOOD", response);
+                        alert("The expence got added");
+                    })
+                    .catch((response) => {
+                        console.log("ERROR", response);
+                        alert("The expence failed to be added");
+                    });
+
+                this.expenceText = "";
+                this.date = "";
+                this.amount = "";
+            },
+        },
+    };
 </script>
 
 <style>
@@ -113,14 +133,14 @@ export default {
   margin-bottom: 2%;
 }
 
-.inputStyle {
-  margin-left: 2%;
-}
+    .inputStyle {
+        margin-left: 2%;
+    }
 
-.buttonStyle {
-  background-color: lightgreen;
-  font-weight: bold;
-  float: inherit;
-  margin-left: 50%;
-}
+    .buttonStyle {
+        background-color: lightgreen;
+        font-weight: bold;
+        float: inherit;
+        margin-left: 50%;
+    }
 </style>
