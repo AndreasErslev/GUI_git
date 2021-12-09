@@ -15,7 +15,7 @@ namespace ModelsApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    //[Authorize]
+    [Authorize]
     public class ExpensesController : ControllerBase
     {
         private readonly ApplicationDbContext _context;

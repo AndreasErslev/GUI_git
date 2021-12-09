@@ -14,7 +14,7 @@
       >Jobs |
     </router-link>
     <router-link to="/JobsModel" v-if="role == 'Model'">Jobs | </router-link>
-    <router-link to="/Expences" v-if="role == 'Model'">Expences | </router-link>
+    <router-link to="/Expenses" v-if="role == 'Model'">Expenses | </router-link>
     <a href="#" v-if="role != ''" v-on:click="logout()">Logout</a>
   </div>
   <router-view />

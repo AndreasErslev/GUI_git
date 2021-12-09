@@ -7,12 +7,12 @@
 
 <style>
 .logo {
-    width: 40%;
+  width: 40%;
 }
 
 .standardText {
-    font-size: 22px;
-    font-style: italic;
-    font-weight: bold;
+  font-size: 22px;
+  font-style: italic;
+  font-weight: bold;
 }
 </style>

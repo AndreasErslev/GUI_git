@@ -1,38 +1,38 @@
 <template>
-    <div>
-        <img alt="Vue logo" src="../assets/logo.png" class="logo" />
-    </div>
-    <p class="standardText">List of Jobs </p>
-    <table class="table-job-model">
-        <thead>
-            <tr>
-                <th>Location</th>
-                <th>Customer</th>
-                <th>Start Date</th>
-                <th>Days</th>
-                <th>Comments</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr v-for="(job, jobIndex) in jobs" :key="jobIndex">
-                <td>
-                    {{ job.location }}
-                </td>
-                <td>
-                    {{ job.customer }}
-                </td>
-                <td>
-                    {{ job.startDate }}
-                </td>
-                <td>
-                    {{ job.days }}
-                </td>
-                <td>
-                    {{ job.comments }}
-                </td>
-            </tr>
-        </tbody>
-    </table>
+  <div>
+    <img alt="Vue logo" src="../assets/logo.png" class="logo" />
+  </div>
+  <p class="standardText">List of Jobs</p>
+  <table class="table-job-model">
+    <thead>
+      <tr>
+        <th>Location</th>
+        <th>Customer</th>
+        <th>Start Date</th>
+        <th>Days</th>
+        <th>Comments</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr v-for="(job, jobIndex) in jobs" :key="jobIndex">
+        <td>
+          {{ job.location }}
+        </td>
+        <td>
+          {{ job.customer }}
+        </td>
+        <td>
+          {{ job.startDate }}
+        </td>
+        <td>
+          {{ job.days }}
+        </td>
+        <td>
+          {{ job.comments }}
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </template>
 
 <script>
@@ -69,13 +69,13 @@ export default {
 
 <style>
 .logo {
-    width: 40%;
+  width: 40%;
 }
 
 .standardText {
-    font-size: 22px;
-    font-style: italic;
-    font-weight: bold;
+  font-size: 22px;
+  font-style: italic;
+  font-weight: bold;
 }
 
 .loginStyle {
@@ -94,8 +94,6 @@ export default {
 }
 
 .table-job-model {
-    margin-top: 4%;
-    text-align: center;
-    margin-left: 15%;
+  margin: 20px auto;
 }
 </style>

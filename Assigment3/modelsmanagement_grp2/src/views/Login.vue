@@ -49,8 +49,8 @@ var url = "https://localhost:44368/api/Account/login";
 export default {
   data() {
     return {
-        email: "boss@m.dk",
-        password: "asdfQWER",
+      email: "",
+      password: "",
     };
   },
   methods: {
@@ -117,13 +117,13 @@ export default {
 
 <style>
 .logo {
-    width: 40%;
+  width: 40%;
 }
 
 .standardText {
-    font-size: 22px;
-    font-style: italic;
-    font-weight: bold;
+  font-size: 22px;
+  font-style: italic;
+  font-weight: bold;
 }
 
 .loginStyle {

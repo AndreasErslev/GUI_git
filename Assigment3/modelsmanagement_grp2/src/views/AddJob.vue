@@ -1,77 +1,89 @@
 <template>
-    <div>
-        <img alt="Vue logo" src="../assets/logo.png" class="logo" />
+  <div>
+    <img alt="Vue logo" src="../assets/logo.png" class="logo" />
+  </div>
+  <p class="standardText">Add a job</p>
+  <div class="container">
+    <div class="row justify-content-center loginStyle">
+      <div class="col-md-2">
+        <label for="customer">Customer: </label>
+      </div>
+      <div class="col-md-4">
+        <input
+          type="text"
+          v-model="customer"
+          name="Customer"
+          required
+          class="inputStyle"
+        />
+      </div>
     </div>
-    <p class="standardText">Add a job </p>
-    <div class="container">
-        <div class="row justify-content-center loginStyle">
-            <div class="col-md-2">
-                <label for="customer">Customer: </label>
-            </div>
-            <div class="col-md-4">
-                <input type="text"
-                       v-model="customer"
-                       name="Customer"
-                       required
-                       class="inputStyle" />
-            </div>
-        </div>
-        <div class="row justify-content-center loginStyle">
-            <div class="col-md-2">
-                <label for="startDate">Start Date: </label>
-            </div>
-            <div class="col-md-4">
-                <input type="text"
-                       v-model="startDate"
-                       name="StartDate"
-                       required
-                       class="inputStyle" />
-            </div>
-        </div>
-        <div class="row justify-content-center loginStyle">
-            <div class="col-md-2">
-                <label for="days">Days: </label>
-            </div>
-            <div class="col-md-4">
-                <input type="text"
-                       v-model="days"
-                       name="Days"
-                       required
-                       class="inputStyle" />
-            </div>
-        </div>
-        <div class="row justify-content-center loginStyle">
-            <div class="col-md-2">
-                <label for="location">Location: </label>
-            </div>
-            <div class="col-md-4">
-                <input type="text"
-                       v-model="location"
-                       name="Location"
-                       required
-                       class="inputStyle" />
-            </div>
-        </div>
-        <div class="row justify-content-center loginStyle">
-            <div class="col-md-2">
-                <label for="comments">Comments: </label>
-            </div>
-            <div class="col-md-4">
-                <textarea v-model="comments"
-                          name="Comments"
-                          required
-                          class="inputStyle" />
-            </div>
-        </div>
-        <div class="row justify-content-center loginStyle">
-            <div class="col-md-6">
-                <input type="button"
-                       value="Add Job"
-                       v-on:click="submitJob"
-                       class="buttonStyle" />
-            </div>
-        </div>
+    <div class="row justify-content-center loginStyle">
+      <div class="col-md-2">
+        <label for="startDate">Start Date: </label>
+      </div>
+      <div class="col-md-4">
+        <input
+          type="text"
+          v-model="startDate"
+          name="StartDate"
+          required
+          class="inputStyle"
+        />
+      </div>
     </div>
+    <div class="row justify-content-center loginStyle">
+      <div class="col-md-2">
+        <label for="days">Days: </label>
+      </div>
+      <div class="col-md-4">
+        <input
+          type="text"
+          v-model="days"
+          name="Days"
+          required
+          class="inputStyle"
+        />
+      </div>
+    </div>
+    <div class="row justify-content-center loginStyle">
+      <div class="col-md-2">
+        <label for="location">Location: </label>
+      </div>
+      <div class="col-md-4">
+        <input
+          type="text"
+          v-model="location"
+          name="Location"
+          required
+          class="inputStyle"
+        />
+      </div>
+    </div>
+    <div class="row justify-content-center loginStyle">
+      <div class="col-md-2">
+        <label for="comments">Comments: </label>
+      </div>
+      <div class="col-md-4">
+        <textarea
+          v-model="comments"
+          name="Comments"
+          required
+          class="inputStyle"
+        />
+      </div>
+    </div>
+    <div class="row justify-content-center loginStyle">
+      <div class="col-md-6">
+        <input
+          type="button"
+          value="Add Job"
+          v-on:click="submitJob"
+          class="buttonStyle"
+        />
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -128,17 +140,17 @@ export default {
 
 <style>
 .logo {
-    width: 40%;
+  width: 40%;
 }
 
-.standardText{
-    font-size: 22px;
-    font-style:italic;
-    font-weight:bold;
+.standardText {
+  font-size: 22px;
+  font-style: italic;
+  font-weight: bold;
 }
 
 .loginStyle {
-    margin-bottom: 2%;
+  margin-bottom: 2%;
 }
 
 .inputStyle {
