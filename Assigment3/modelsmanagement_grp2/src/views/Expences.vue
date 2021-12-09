@@ -1,62 +1,55 @@
 <template>
-  <div class="AddExpence">
-    <h1>Add an expence to your job</h1>
-  </div>
-  <div class="container">
-    <div class="row justify-content-center ModelExpence">
-      <div class="col-md-2">
-        <label for="ExpenceText">Expence: </label>
-      </div>
-      <div class="col-md-4">
-        <input
-          type="text"
-          v-model="expenceText"
-          name="ExpenceText"
-          required
-          class="inputStyle"
-        />
-      </div>
+    <div>
+        <img alt="Vue logo" src="../assets/logo.png" class="logo" />
     </div>
-    <div class="row justify-content-center ModelExpence">
-      <div class="col-md-2">
-        <label for="Date">Date (YYYY/MM/DD): </label>
-      </div>
-      <div class="col-md-4">
-        <input
-          type="text"
-          v-model="date"
-          name="Date"
-          required
-          class="inputStyle"
-        />
-      </div>
-    </div>
-    <div class="row justify-content-center ModelExpence">
-      <div class="col-md-2">
-        <label for="Amount">Amount: </label>
-      </div>
-      <div class="col-md-4">
-        <input
-          type="text"
-          v-model="amount"
-          name="Amount"
-          required
-          class="inputStyle"
-        />
-      </div>
-    </div>
+    <p class="standardText">Add an expence to a chosen job </p>
+    <div class="container">
+        <div class="row justify-content-center ModelExpence">
+            <div class="col-md-2">
+                <label for="ExpenceText">Expence: </label>
+            </div>
+            <div class="col-md-4">
+                <input type="text"
+                       v-model="expenceText"
+                       name="ExpenceText"
+                       required
+                       class="inputStyle" />
+            </div>
+        </div>
+        <div class="row justify-content-center ModelExpence">
+            <div class="col-md-2">
+                <label for="Date">Date (YYYY/MM/DD): </label>
+            </div>
+            <div class="col-md-4">
+                <input type="text"
+                       v-model="date"
+                       name="Date"
+                       required
+                       class="inputStyle" />
+            </div>
+        </div>
+        <div class="row justify-content-center ModelExpence">
+            <div class="col-md-2">
+                <label for="Amount">Amount: </label>
+            </div>
+            <div class="col-md-4">
+                <input type="text"
+                       v-model="amount"
+                       name="Amount"
+                       required
+                       class="inputStyle" />
+            </div>
+        </div>
 
-    <div class="row justify-content-center ModelExpence">
-      <div class="col-md-6">
-        <input
-          type="button"
-          value="Add Expence"
-          v-on:click="addExpence"
-          class="buttonStyle"
-        />
-      </div>
+        <div class="row justify-content-center ModelExpence">
+            <div class="col-md-6">
+                <input type="button"
+                       value="Add Expence"
+                       v-on:click="addExpence"
+                       class="buttonStyle" />
+            </div>
+        </div>
     </div>
-  </div>
 </template>
 
 <script>
@@ -106,6 +99,16 @@ export default {
 </script>
 
 <style>
+.logo {
+    width: 40%;
+}
+
+.standardText {
+    font-size: 22px;
+    font-style: italic;
+    font-weight: bold;
+}
+
 .ModelExpence {
   margin-bottom: 2%;
 }

@@ -1,34 +1,38 @@
 <template>
-  <table class="table-admin table-bordered" id="job-app">
-    <thead>
-      <tr>
-        <th>Location</th>
-        <th>Customer</th>
-        <th>Start Date</th>
-        <th>Days</th>
-        <th>Comments</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr v-for="(job, jobIndex) in jobs" :key="jobIndex">
-        <td>
-          {{ job.location }}
-        </td>
-        <td>
-          {{ job.customer }}
-        </td>
-        <td>
-          {{ job.startDate }}
-        </td>
-        <td>
-          {{ job.days }}
-        </td>
-        <td>
-          {{ job.comments }}
-        </td>
-      </tr>
-    </tbody>
-  </table>
+    <div>
+        <img alt="Vue logo" src="../assets/logo.png" class="logo" />
+    </div>
+    <p class="standardText">List of Jobs </p>
+    <table class="table-job-model">
+        <thead>
+            <tr>
+                <th>Location</th>
+                <th>Customer</th>
+                <th>Start Date</th>
+                <th>Days</th>
+                <th>Comments</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr v-for="(job, jobIndex) in jobs" :key="jobIndex">
+                <td>
+                    {{ job.location }}
+                </td>
+                <td>
+                    {{ job.customer }}
+                </td>
+                <td>
+                    {{ job.startDate }}
+                </td>
+                <td>
+                    {{ job.days }}
+                </td>
+                <td>
+                    {{ job.comments }}
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </template>
 
 <script>
@@ -64,6 +68,16 @@ export default {
 </script>
 
 <style>
+.logo {
+    width: 40%;
+}
+
+.standardText {
+    font-size: 22px;
+    font-style: italic;
+    font-weight: bold;
+}
+
 .loginStyle {
   margin-bottom: 2%;
 }
@@ -77,5 +91,11 @@ export default {
   font-weight: bold;
   float: inherit;
   margin-left: 53% !important;
+}
+
+.table-job-model {
+    margin-top: 4%;
+    text-align: center;
+    margin-left: 15%;
 }
 </style>

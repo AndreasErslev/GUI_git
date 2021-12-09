@@ -1,58 +1,63 @@
 <template>
-   <table>
-    <thead>
-      <tr>
-        <th>Customers</th>
-        <th>Start Date</th>
-        <th>Days</th>
-        <th>Location</th>
-        <th>Comments</th>
-        <th>Remove Models</th>
-        <th>Add Models</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr v-for="(job, jobIndex) in jobs" :key="jobIndex">
-        <td>
-          {{ job.customers }}
-        </td>
-        <td>
-          {{ job.startDate }}
-        </td>
-        <td>
-          {{ job.days }}
-        </td>
-        <td>
-          {{ job.location }}
-        </td>
-        <td>
-          {{ job.comments }}
-        </td>
-        <td>
-          <table>
+    <div>
+        <img alt="Vue logo" src="../assets/logo.png" class="logo" />
+    </div>
+    <p class="standardText">List of Jobs </p>
+    <p class="text-under">As a manager you can remove or add models to a job</p>
+    <table class="job-manager-frist-tabel">
+        <thead>
             <tr>
-                <td v-for="(model, modelIndex) in job.models"
-                    :key="modelIndex">
-                    <a href="#"
-                       v-on:click="deleteModel(model.email, job.jobId)">Remove {{ model.firstName }} </a>
+                <th>Customers</th>
+                <th>Start Date</th>
+                <th>Days</th>
+                <th>Location</th>
+                <th>Comments</th>
+                <th>Remove Models</th>
+                <th>Add Models</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr v-for="(job, jobIndex) in jobs" :key="jobIndex">
+                <td>
+                    {{ job.customers }}
+                </td>
+                <td>
+                    {{ job.startDate }}
+                </td>
+                <td>
+                    {{ job.days }}
+                </td>
+                <td>
+                    {{ job.location }}
+                </td>
+                <td>
+                    {{ job.comments }}
+                </td>
+                <td>
+                    <table>
+                        <tr>
+                            <td v-for="(model, modelIndex) in job.models"
+                                :key="modelIndex">
+                                <a href="#"
+                                   v-on:click="deleteModel(model.email, job.jobId)">Remove {{ model.firstName }} </a>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+
+                <td>
+                    <table>
+                        <tr>
+                            <td v-for="(model, modelIndex) in models" :key="modelIndex">
+                                <a href="#"
+                                   v-on:click="addModelToJob(model.efModelId, job.jobId)">Add {{ model.firstName }} </a>
+                            </td>
+                        </tr>
+                    </table>
                 </td>
             </tr>
-          </table>
-        </td>
-
-        <td>
-          <table>
-            <tr>
-              <td v-for="(model, modelIndex) in models" :key="modelIndex">
-                  <a href="#"
-                     v-on:click="addModelToJob(model.efModelId, job.jobId)">Add {{ model.firstName }} </a>
-              </td>
-            </tr>
-          </table>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+        </tbody>
+    </table>
 </template>
 
 <script>
@@ -170,6 +175,21 @@ export default {
 </script>
 
 <style>
+.logo {
+    width: 40%;
+}
+
+.standardText {
+    font-size: 22px;
+    font-style: italic;
+    font-weight: bold;
+}
+
+.text-under{
+    font-size: 20px;
+    font-style:italic;
+}
+
 .loginStyle {
   margin-bottom: 2%;
 }
@@ -183,5 +203,11 @@ export default {
   font-weight: bold;
   float: inherit;
   margin-left: 53% !important;
+}
+
+.job-manager-frist-tabel{
+    margin-top: 4%;
+    align-content: center;
+    margin-left: 15%;
 }
 </style>
