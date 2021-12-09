@@ -85,7 +85,7 @@ export default {
           localStorage.setItem("email", payload.email);
           localStorage.setItem("role", payload.role);
           localStorage.setItem("modelId", payload.ModelId);
-          // G� til home siden efter login:
+          // Gå til home siden efter login:
           this.$router.push("/");
         } else {
           alert("Server returned: " + response.statusText);
