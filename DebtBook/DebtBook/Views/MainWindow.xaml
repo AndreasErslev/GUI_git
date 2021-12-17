@@ -21,7 +21,7 @@
             <RowDefinition Height="1.5*"/>
         </Grid.RowDefinitions>
 
-        <Label Content="Debtors" Grid.Row="0" FontSize="20" VerticalAlignment="Bottom" Margin="10,0,0,0"/>
+        <Label Content="Deptors" Grid.Row="0" FontSize="20" VerticalAlignment="Bottom" Margin="10,0,0,0"/>
         <DataGrid x:Name="DisplayDebtors" ItemsSource="{Binding Path=Debtors}"
             IsSynchronizedWithCurrentItem="True" SelectedItem="{Binding Path=CurrentDebtor}"      
             Grid.Column="0"
